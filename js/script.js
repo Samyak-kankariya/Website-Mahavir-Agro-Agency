@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const message = document.getElementById("message").value;
 
         try {
-            const response = await fetch("http://localhost:5000/submit-enquiry", {
+            const response = await fetch("https://agri-agency-website.onrender.com", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ name, email, message }),
