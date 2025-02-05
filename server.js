@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(bodyParser.json());
 
-// Handle Enquiry Form Submission
+// Route to Handle Enquiry Form
 app.post("/submit-enquiry", async (req, res) => {
     const { name, email, message } = req.body;
 
@@ -20,19 +20,19 @@ app.post("/submit-enquiry", async (req, res) => {
     }
 
     try {
-        // Configure Nodemailer Transport
+        // Setup Nodemailer Transport
         const transporter = nodemailer.createTransport({
             service: "gmail",
             auth: {
-                user: process.env.samyakkankariya0011, // Your email
-                pass: process.env.Password, // App password
+                user: process.env.EMAIL_USER, // ✅ Corrected
+                pass: process.env.EMAIL_PASS, // ✅ Corrected
             },
         });
 
         // Email Options
         const mailOptions = {
             from: process.env.EMAIL_USER,
-            to: process.env.samyakkankariya0011, // The recipient email
+            to: process.env.RECEIVER_EMAIL,
             subject: "New Enquiry from Website",
             html: `
                 <h2>New Enquiry Received</h2>
@@ -48,10 +48,10 @@ app.post("/submit-enquiry", async (req, res) => {
         res.json({ success: "Enquiry sent successfully!" });
 
     } catch (error) {
-        console.error("Error sending email:", error);
+        console.error("❌ Email sending error:", error.message);
         res.status(500).json({ error: "Server error, try again later." });
     }
 });
 
 // Start Server
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, () => console.log(`✅ Server running on port ${PORT}`));
