@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: #fff;
     font-family: Arial, sans-serif;
@@ -45,25 +49,57 @@ header .logo img {
 
 /* Navigation Bar */
 nav {
-    background: #f8f8f8;
-    padding: 10px 20px;
+    background: #606060;
+    padding: 10px;
 }
 
 nav ul {
-    display: flex;
-    gap: 20px;
     list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    position: relative;
 }
 
 nav ul li a {
     text-decoration: none;
-    color: #333;
-    font-size: 16px;
-    transition: color 0.3s ease;
+    color: white;
+    padding: 10px 20px;
+    display: block;
 }
 
-nav ul li a:hover {
-    color: #4CAF50;
+/* Dropdown Menu */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background: #606060;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    min-width: 150px;
+    border-radius: 5px;
+}
+
+.dropdown-menu li {
+    width: 100%;
+}
+
+.dropdown-menu li a {
+    padding: 10px;
+    color: white;
+    display: block;
+}
+
+.dropdown-menu li a:hover {
+    background: #333;
+}
+
+/* Show Dropdown on Hover */
+.dropdown:hover .dropdown-menu {
+    display: block;
 }
 
 /* Main Section */
@@ -308,7 +344,8 @@ footer .footPage ul li a:hover {
     justify-content: center;
     align-items: center;
     width: 100%;
-    max-width: 800px;
+    max-width: 300px;
+    max-height: 250px;
     margin: 20px auto;
     overflow: hidden;
     border-radius: 10px;

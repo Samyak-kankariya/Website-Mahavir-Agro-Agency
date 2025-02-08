@@ -1,3 +1,9 @@
+document.querySelector('a[href="#contact"]').addEventListener('click', function(event) {
+    event.preventDefault();
+    document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
+});
+
+
 let slideIndex = 0;
 const slides = document.querySelectorAll(".mySlides");
 const dots = document.querySelectorAll(".dot");
