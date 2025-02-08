@@ -302,6 +302,26 @@ footer .footPage ul li a:hover {
     text-decoration: underline;
 }
 
+/* Google Map Container */
+.map-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Google Map iFrame */
+  .google-map {
+    width: 100%;
+    height: 450px;
+    border: none;
+  }
+
 footer .footPage p a{
     color:#fff;
     text-decoration: none;
